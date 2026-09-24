@@ -169,6 +169,86 @@ Final recommendation buckets:
 - Alternative playing style
 - Experimental/dark-horse candidate
 
+
+## Market Price, Lifespan, and Savings Analysis
+Every final candidate report must include a current-market cost comparison between the reference rubber and each replacement candidate.
+
+### Price Collection Rules
+For the reference rubber and every finalist:
+1. Record the research date.
+2. Collect **current real street price**, not only MSRP/list price.
+3. For Korea, prefer current Korean price-comparison sites and reputable table-tennis retailers. Record official MSRP separately when available.
+4. For AliExpress/overseas candidates, record the realistic delivered purchase price when possible. Separate item price, shipping, coupon/discount assumptions, tax/duty if relevant, and currency conversion assumptions.
+5. Use multiple current sellers/sources when possible. Report a range and a representative price (prefer median/typical street price over a temporary extreme low).
+6. Flag temporary coupons, member/card-only prices, suspicious listings, counterfeit risk, and stale prices.
+7. Never compare the reference rubber's MSRP against a candidate's discounted street price without clearly labeling the mismatch.
+
+### Lifespan Estimation
+For each rubber, estimate practical performance lifespan from user reviews, not merely physical survival:
+- months of acceptable competitive performance
+- playing hours when evidence allows
+- frequency assumptions (sessions/week and hours/session)
+- whether FH and BH lifespan may differ
+- loss mode: grip loss, sponge softening, shrinkage, edge damage, bubbling, QC failure, etc.
+
+Give lifespan as a range when evidence is uncertain, e.g. 4–6 months. Attach an evidence/confidence grade.
+
+### Annual Cost Model
+Calculate independently per side when FH/BH use different rubbers.
+
+Definitions:
+- replacements_per_year = 12 / lifespan_months
+- annual_cost = representative_street_price × replacements_per_year
+- annual_savings = reference_annual_cost − candidate_annual_cost
+- savings_rate = annual_savings / reference_annual_cost × 100
+- cost_per_playing_hour = annual_cost / estimated_annual_playing_hours
+
+For lifespan ranges, calculate conservative / midpoint / optimistic scenarios rather than hiding uncertainty behind one number.
+
+### Multi-Year Savings
+Show at minimum:
+- 1-year cost and savings
+- 3-year cost and savings
+
+When useful, also show 5-year projections, but do not imply prices will remain unchanged. Label multi-year numbers as constant-price projections.
+
+### Required Cost Table
+Every final report must include a table with:
+- Rubber / configuration
+- Side
+- Current street-price range
+- Representative price
+- Official MSRP when available
+- Estimated lifespan
+- Replacements/year
+- Annual cost
+- Annual savings vs reference
+- Savings %
+- 3-year projected savings
+- Cost/hour when playing-time assumptions are available
+- Price date
+- Cost-confidence grade
+
+### Reporting Rules
+Distinguish three questions:
+1. **Cheapest sheet price**
+2. **Lowest annual ownership cost**
+3. **Best performance-per-cost**
+
+Do not automatically recommend the cheapest sheet. A candidate that costs less initially but wears twice as fast may save little or nothing annually.
+
+The final web report in `docs/` must include a dedicated **Price · Lifespan · Annual Savings** section containing:
+- current reference-rubber market price
+- each finalist's current market price
+- lifespan evidence/range
+- annual replacement-cost comparison
+- annual savings in KRW and percentage
+- 3-year constant-price projection
+- assumptions and price-research date
+- citations/source links for price and lifespan evidence
+
+Whenever a new research report is generated, update the web report with the latest price/cost analysis rather than leaving historical prices unlabeled.
+
 ## Source Priority
 See references/sources.md.
 
