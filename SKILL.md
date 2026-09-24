@@ -249,6 +249,83 @@ The final web report in `docs/` must include a dedicated **Price · Lifespan · 
 
 Whenever a new research report is generated, update the web report with the latest price/cost analysis rather than leaving historical prices unlabeled.
 
+
+## Persistent Web Report Archive (Append-Only)
+
+The web report is a cumulative research library. **Never overwrite or delete an older research result merely because a new search is completed.**
+
+### Storage Architecture
+- `docs/index.html`: report browser/UI only. Do not store the latest report as the only report here.
+- `docs/data/reports.json`: append-only report registry containing all completed research reports.
+- Optional future split when the registry grows: `docs/data/reports/<report-id>.json` plus a lightweight `docs/data/index.json`.
+- Each completed research run gets a stable unique `report_id`.
+
+### Required Report Identity
+Every report record must store:
+- report_id
+- research_date
+- blade manufacturer/model
+- blade family/technology when known (e.g. ALC, Super ALC)
+- reference rubber exact product name
+- side: FH / BH / both
+- budget and currency
+- tackiness allowance
+- booster policy
+- purchase region
+- exact candidate product name
+- variant fields separately: hardness, sponge thickness, color, version/provincial/national/etc.
+- research summary, evidence, price/lifespan calculations, rejected candidates, saturation note, and source links
+
+**Never merge variant text into the product name when that makes the product impossible to search.** Example: product = `YINHE Moon 12 Blue`; hardness = `M+` or `H-`.
+
+### Append-Only Rules
+1. Before publishing a new report, load the existing report registry.
+2. Preserve every valid existing record.
+3. Add the new report as a new record.
+4. If the same blade/reference/constraints are researched again, create a new dated/versioned record; do not silently replace the old one.
+5. Corrections should create a revised record linked with `supersedes_report_id` unless the change is purely a broken-link/typo fix.
+6. Deletion is allowed only for clearly corrupt/duplicate data and should be explicitly justified.
+7. Price snapshots are historical evidence. Never rewrite an old report's price to today's price; create a new snapshot/report.
+
+### Web UI Requirements
+The GitHub Pages UI must provide cascading filters/dropdowns for:
+1. Blade
+2. Reference rubber
+3. Side (FH/BH/both)
+4. Optional constraints (budget, tackiness, booster)
+5. Research date/version
+
+The UI must:
+- show all matching historical reports
+- default to the newest matching report while keeping older versions selectable
+- provide an `All` option where useful
+- display exact candidate name and variant separately
+- show report date prominently so historical prices are not mistaken for current prices
+- preserve deep-linkable report IDs in the URL hash/query when practical
+- work as static GitHub Pages without requiring a backend
+
+### Catalogs
+Derive Blade and Reference Rubber dropdown values from accumulated report data rather than maintaining fragile duplicated lists. Normalize aliases for display/search (e.g. Viscaria Super ALC vs Viscaria SALC), but preserve the original exact model name in each report.
+
+### Migration / Backfill
+When converting an existing single-report page to the archive format:
+- extract every recoverable historical report from Git history/current documentation
+- store them as separate records with their original research dates/conditions where known
+- mark unknown fields as unknown rather than inventing values
+- keep legacy findings even if later research supersedes them
+- clearly label superseded/outdated reports
+
+### Publishing Checklist
+Before every web-report commit verify:
+- previous report count did not decrease unexpectedly
+- new report has a unique ID
+- blade/reference dropdowns include the new values
+- old reports remain selectable
+- price date is visible
+- exact product name and variant are separately searchable
+- latest report renders correctly
+- at least one older report can still be opened
+
 ## Source Priority
 See references/sources.md.
 
