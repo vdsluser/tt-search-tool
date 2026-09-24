@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-09-25",
+  "reports": [
+    {
+      "report_id": "2026-09-24-viscaria-mxk-rozena-v1",
+      "research_date": "2026-09-24",
+      "status": "historical",
+      "blade": {
+        "brand": "Butterfly",
+        "model": "Viscaria",
+        "technology": "ALC"
+      },
+      "reference": {
+        "display": "Tibhar MX-K (FH) + Butterfly Rozena (BH)"
+      },
+      "constraints": {
+        "side": "both"
+      },
+      "title": "MX-K + Rozena 저가 대체 조합",
+      "source_commit": "a4346eedc2ebf84f99c0e4da586c4b8611fee6de"
+    },
+    {
+      "report_id": "2026-09-25-viscaria-d05-v1",
+      "research_date": "2026-09-25",
+      "status": "historical",
+      "blade": {
+        "brand": "Butterfly",
+        "model": "Viscaria",
+        "technology": "ALC"
+      },
+      "reference": {
+        "display": "Butterfly Dignics 05"
+      },
+      "constraints": {
+        "side": "both",
+        "budget_krw": 30000,
+        "tackiness": "약점착까지",
+        "booster": "no"
+      },
+      "title": "Dignics 05 대체 — Viscaria",
+      "source_commit": "c7a2fd05d0bae9cbfbdc2e3b75d9c2a779649045"
+    },
+    {
+      "report_id": "2026-09-25-viscaria-super-alc-d05-v1",
+      "research_date": "2026-09-25",
+      "status": "current",
+      "blade": {
+        "brand": "Butterfly",
+        "model": "Viscaria Super ALC",
+        "technology": "Super ALC"
+      },
+      "reference": {
+        "display": "Butterfly Dignics 05"
+      },
+      "constraints": {
+        "side": "both",
+        "budget_krw": 30000,
+        "tackiness": "약점착까지",
+        "booster": "no"
+      },
+      "title": "Dignics 05 대체 — Viscaria Super ALC",
+      "source_commit": "1881349b0d6954a947cfb4f0b6f510085b14c0f9"
+    }
+  ]
+}
