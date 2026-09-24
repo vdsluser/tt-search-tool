@@ -18,7 +18,18 @@
         "side": "both"
       },
       "title": "MX-K + Rozena 저가 대체 조합",
-      "source_commit": "a4346eedc2ebf84f99c0e4da586c4b8611fee6de"
+      "source_commit": "a4346eedc2ebf84f99c0e4da586c4b8611fee6de",
+      "summary": "Viscaria에서 FH MX-K, BH Rozena를 저가 러버로 대체한 초기 조사.",
+      "recommendations": [
+        "FH Volant Phoenix 40° + BH YINHE Moon 12 Blue M+",
+        "FH YINHE Jupiter 3 Asia 38° + BH Moon 12 Blue M+",
+        "FH Phoenix 40° + BH 729 Presto Speed Max"
+      ],
+      "cost": [
+        "기준 MX-K+Rozena 약 83,000원",
+        "Phoenix+Moon 약 31,000~43,000원 / 48~63% 절감",
+        "Jupiter+Moon 약 40,000~54,000원 / 35~52% 절감"
+      ]
     },
     {
       "report_id": "2026-09-25-viscaria-d05-v1",
@@ -39,7 +50,20 @@
         "booster": "no"
       },
       "title": "Dignics 05 대체 — Viscaria",
-      "source_commit": "c7a2fd05d0bae9cbfbdc2e3b75d9c2a779649045"
+      "source_commit": "c7a2fd05d0bae9cbfbdc2e3b75d9c2a779649045",
+      "summary": "D05 / 일반 Viscaria / FH·BH / 장당 3만원 이하 / 약점착까지 / 무부스터 재귀 조사.",
+      "recommendations": [
+        "BH YINHE Moon 12 Blue (H- 또는 M+)",
+        "BH Sanwei Gear Hyper 38/39",
+        "FH Palio AK47 Red",
+        "FH YINHE Jupiter 3 Asia 38/39"
+      ],
+      "cost": [
+        "D05 대표 84,000원 / 연 201,600원",
+        "Moon 12 약 19,800원 / 연 59,400원",
+        "Jupiter 3 Asia 약 22,900원 / 연 61,100원",
+        "AK47 Red 약 23,300원 / 연 69,900원"
+      ]
     },
     {
       "report_id": "2026-09-25-viscaria-super-alc-d05-v1",
@@ -60,7 +84,20 @@
         "booster": "no"
       },
       "title": "Dignics 05 대체 — Viscaria Super ALC",
-      "source_commit": "1881349b0d6954a947cfb4f0b6f510085b14c0f9"
+      "source_commit": "1881349b0d6954a947cfb4f0b6f510085b14c0f9",
+      "summary": "D05 / Viscaria Super ALC / FH·BH / 장당 3만원 이하 / 약점착까지 / 무부스터. 후보 포화까지 재귀 검증.",
+      "recommendations": [
+        "FH 729 Friendship Battle III / 경도 40° + BH YINHE Moon 12 Blue / 경도 H-",
+        "쉬운 BH: Moon 12 Blue / 경도 M+",
+        "FH 직접근거: 729 Friendship Battle II / 경도 40° (3만원 이하일 때)"
+      ],
+      "cost": [
+        "D05 84,000원 / 연 201,600원",
+        "Battle III 40° 약 26,300원 / 연 52,600원 / 연 149,000원 절약",
+        "Moon 12 Blue 약 22,900원 / 연 55,000원 / 연 146,600원 절약",
+        "Big Dipper 5 약 23,200원 / 연 37,100원"
+      ],
+      "saturation": "3차 확장 후보까지 검증 후 가격·부스터·특성·Super ALC 근거 기준에서 추가 상위 후보가 없어 포화 판정."
     }
   ]
 }
