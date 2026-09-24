@@ -326,6 +326,29 @@ Before every web-report commit verify:
 - latest report renders correctly
 - at least one older report can still be opened
 
+## Publication Completion Gate
+
+A research run is **not complete merely because files were committed to GitHub**. Publishing is part of the required workflow.
+
+After adding a new report:
+1. Commit the append-only report data and any required UI changes.
+2. Confirm that the GitHub Pages deployment for that commit starts and completes successfully.
+3. Open the public GitHub Pages site after deployment.
+4. Verify that the newly added report is visible/selectable under the expected Blade, Reference Rubber, Side, and Research Date/Version filters.
+5. Verify that at least one older historical report is still selectable and renders correctly.
+6. Verify that the displayed report ID/date and price snapshot match the newly committed record.
+7. Verify that product names and variants are rendered separately and remain searchable.
+8. If deployment is still pending, report it as pending rather than complete and re-check when appropriate.
+9. If deployment fails, investigate the workflow/site error and fix it before declaring the publishing cycle complete.
+10. Only after both deployment and live-site verification succeed may the research + publication cycle be reported as **complete**.
+
+### Completion Definition
+The full required cycle is:
+
+`research → recursive discovery/verification → saturation → price/lifespan analysis → append historical data → commit → GitHub Pages deploy → live-site verification → complete`
+
+Never tell the user that the web report has been fully updated when only the repository commit has succeeded.
+
 ## Source Priority
 See references/sources.md.
 
