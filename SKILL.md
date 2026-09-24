@@ -326,6 +326,79 @@ Before every web-report commit verify:
 - latest report renders correctly
 - at least one older report can still be opened
 
+## Full-Fidelity Historical Report Preservation
+
+The cumulative archive is not a summary database. **Every archived report must preserve the full research report at substantially the same level of detail as when it was first published.**
+
+### No-Loss Rule
+Do not replace a detailed historical report with only:
+- a short summary
+- a few recommendation bullets
+- a compressed cost list
+- a link to an old commit
+
+Those may be included as metadata/navigation aids, but they are not a substitute for the full report.
+
+### Required Full Report Payload
+Each report must retain, when the original research contained them:
+1. Research conditions and hard filters
+2. Reference-rubber profile
+3. Blade-specific fit analysis
+4. Final recommendation cards / configurations
+5. First-order candidate shortlist
+6. Recursive candidate-discovery graph
+7. Second- and third-order candidates
+8. Multiregional review findings (Korea/English/European/Chinese/Japanese/YouTube/Reddit as applicable)
+9. Same-blade / same-side evidence
+10. Contradictory reviews and uncertainty
+11. Full candidate comparison matrix
+12. Exact product name plus separate variant fields
+13. Current-at-that-time price evidence and price date
+14. Lifespan evidence/range
+15. Annual ownership-cost calculations
+16. 1-year and 3-year savings tables
+17. Rejected/downgraded candidates and explicit reasons
+18. Evidence/confidence grades
+19. Saturation decision and why discovery stopped
+20. Source links/citations used in that report
+21. Assumptions, caveats, and warnings
+
+### Historical Rendering
+When a user selects an older report in the web UI, render its **complete archived content**, not a shortened archive card. The historical page/view should be comparable in detail to the original report page.
+
+The archive browser may initially show a compact report card/list, but selecting/opening a report must expose the full report.
+
+### Preferred Data Model
+Use:
+- a lightweight report registry/index for filtering and dropdowns; and
+- a full report payload per report, preferably `docs/data/reports/<report-id>.json` once reports become detailed.
+
+The index should contain metadata only. The full report file should contain all sections/tables/evidence needed to reconstruct the original report.
+
+This split prevents `reports.json` from becoming an oversized fragile file while preserving full fidelity.
+
+### Backfill Requirement
+For legacy reports already reduced to summaries:
+1. Read the original historical HTML/data from Git history.
+2. Recover all available sections and tables.
+3. Convert them into the full report schema without shortening their substantive content.
+4. Preserve original wording/data where practical.
+5. Mark information as unavailable when it was never recorded; never invent missing evidence.
+6. Keep the original commit SHA as provenance.
+7. Verify the rebuilt historical report visually against the original historical page.
+
+### Full-Fidelity Publishing Checklist
+Before declaring archive migration/update complete, verify:
+- every report has a full payload, not metadata only
+- all original major headings are present
+- recommendation and candidate tables retain all original rows/columns
+- cost/lifespan tables retain all available values
+- rejected candidates and saturation notes are preserved
+- source/evidence sections are preserved when available
+- selecting an old report renders the full detailed report
+- the newest report also renders through the same full-report system
+- no older report became shorter because a newer report was added
+
 ## Publication Completion Gate
 
 A research run is **not complete merely because files were committed to GitHub**. Publishing is part of the required workflow.
